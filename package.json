@@ -1,0 +1,41 @@
+{
+  "name": "preset",
+  "version": "1.0.0",
+  "description": "prototype of other projects",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarvinHuang/preset.git"
+  },
+  "author": "marvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarvinHuang/preset/issues"
+  },
+  "homepage": "https://github.com/MarvinHuang/preset#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-template-html": "^0.2.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
+    "gulp-webserver": "^0.9.1",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "daterangepicker": "^3.0.3",
+    "jquery-binarytransport": "^1.0.0"
+  }
+}
