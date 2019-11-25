@@ -22,6 +22,34 @@ body{
     background: rgba(255,0,0,.2);
     .sec{
         background-size: contain;
+        &.sec-9{
+            position: relative;
+            a{
+                cursor: pointer;
+            }
+            .btn{
+                position: absolute;
+                max-width: 353px;
+                width: percentage( 353 / $width-number-wrapper );
+                height: percentage( 63 / 186 );
+                border-radius: 31px;
+                display: inline-block;
+                transition: .2s;
+                cursor: pointer;
+                &:hover{
+                    box-shadow: 0 4px 4px rgba(0,0,0,.3), 0 6px 10px rgba(0,0,0,.4);
+                }
+                &.btn-1{
+                    left: 7.5%;
+                }
+                &.btn-2{
+                    left: 36.5%;
+                }
+                &.btn-3{
+                    left: 66%;
+                }
+            }
+        }
     }
 }
 @for $i from 1 through 9 {
@@ -44,6 +72,29 @@ body{
 
     .wrapper{
         max-width: $width-wrapper;
+        .sec{
+            &.sec-9{
+                .btn{
+                    max-width: 625px;
+                    width: percentage( 625 / $width-number-wrapper );
+                    // background: rgba(0,90,255,.4);
+                    height: percentage( 112 / 484 );
+                    border-radius: 28px;
+                    left: 10%;
+                    &.btn-1{
+                        left: 10%;
+                    }
+                    &.btn-2{
+                        left: 10%;
+                        top: 31%;
+                    }
+                    &.btn-3{
+                        left: 10%;
+                        top: 61%;
+                    }
+                }
+            }
+        }
     }
 
     @for $i from 1 through 9 {
