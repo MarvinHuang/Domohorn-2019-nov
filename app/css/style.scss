@@ -1,0 +1,55 @@
+
+$bg-img-location: '../image/';
+$width-number-wrapper: 1360;
+$width-wrapper: #{ $width-number-wrapper }px;
+$height-sec-max: 773, 904, 845, 821, 781, 1036, 1063, 1064, 186;
+
+@mixin sec-size( $maxHeight ) {
+    max-height: #{$maxHeight}px;
+    padding-bottom: percentage( $maxHeight / $width-number-wrapper );
+}
+
+
+
+body{
+    margin: 0;
+}
+.wrapper{
+    max-width: $width-wrapper;
+    width: 100%;
+    box-shadow: 0 0 3px rgba(0,0,0,.2), 0 0 8px rgba(0,0,0,.2);
+    margin: auto;
+    background: rgba(255,0,0,.2);
+    .sec{
+        background-size: contain;
+    }
+}
+@for $i from 1 through 9 {
+    .sec-#{ $i } {
+        @include sec-size( nth($height-sec-max, $i) );
+        background: url( "#{ $bg-img-location }pc#{ $i }.jpg" );
+    }
+}
+
+
+
+@media screen and( max-width: 750px ) {
+    $width-number-wrapper: 750;
+    $width-wrapper: #{ $width-number-wrapper }px;
+    $height-sec-max: 986, 1188, 1039, 1030, 955, 2701, 2324, 2242, 484;
+    @mixin sec-size( $maxHeight ) {
+        max-height: #{$maxHeight}px;
+        padding-bottom: percentage( $maxHeight / $width-number-wrapper );
+    }
+
+    .wrapper{
+        max-width: $width-wrapper;
+    }
+
+    @for $i from 1 through 9 {
+        .sec-#{ $i } {
+            @include sec-size( nth($height-sec-max, $i) );
+            background: url( "#{ $bg-img-location }mb#{ $i }.jpg" );
+        }
+    }
+}

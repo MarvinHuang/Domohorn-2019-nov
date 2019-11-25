@@ -52,6 +52,7 @@ gulp.task('moveAsset', function() {
 	var sources = [
 		`${appFolder}/asset/icon/**/*.*`,
 		`${appFolder}/asset/image/**/*.*`,
+		`${appFolder}/image/**/*.*`,
 		`${appFolder}/asset/videos/**/*.*`,
 		`${appFolder}/asset/lib/**/*.*`,
 		// `${appFolder}/asset/templates/**/*.*`
@@ -103,7 +104,12 @@ gulp.task('template-login', function() {
 
 /* 處理scss */
 gulp.task('sass', function () {
-	const srcs = [`${appFolder}/asset/style/layout.scss`, `${appFolder}/style.scss`, `${appFolder}/src/pages/**/*.scss`]
+	const srcs = [
+		`${appFolder}/asset/style/layout.scss`, 
+		`${appFolder}/style.scss`, 
+		`${appFolder}/src/pages/**/*.scss`,
+		`${appFolder}/css/style.scss`
+	]
   return gulp.src( srcs, {base: appFolder} )
     .pipe( sass({outputStyle: isBuiltForRelease ? 'compressed' : ''}).on('error', sass.logError) )
     .pipe( gulp.dest(sendToDest()) );
@@ -111,7 +117,12 @@ gulp.task('sass', function () {
 
 /* 監看scss檔案 */
 gulp.task('sass:watch', function () {
-	const srcs = [`${appFolder}/asset/style/*.scss`, `${appFolder}/style.scss`, `${appFolder}/src/pages/**/*.scss`]
+	const srcs = [
+		`${appFolder}/asset/style/*.scss`,
+		`${appFolder}/style.scss`,
+		`${appFolder}/src/pages/**/*.scss`,
+		`${appFolder}/css/style.scss`
+	]
   gulp.watch( srcs, ['sass'] );
 });
 
