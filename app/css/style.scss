@@ -1,15 +1,11 @@
-
 $bg-img-location: '../image/';
 $width-number-wrapper: 1360;
 $width-wrapper: #{ $width-number-wrapper }px;
 $height-sec-max: 773, 904, 845, 821, 781, 1036, 1063, 1064, 186;
-
 @mixin sec-size( $maxHeight ) {
     max-height: #{$maxHeight}px;
     padding-bottom: percentage( $maxHeight / $width-number-wrapper );
 }
-
-
 
 body{
     margin: 0;
@@ -17,11 +13,12 @@ body{
 .wrapper{
     max-width: $width-wrapper;
     width: 100%;
+    background: #fffbde;
     box-shadow: 0 0 3px rgba(0,0,0,.2), 0 0 8px rgba(0,0,0,.2);
     margin: auto;
-    background: rgba(255,0,0,.2);
     .sec{
-        background-size: contain;
+        background-size: cover;
+        background-repeat: no-repeat;
         &.sec-9{
             position: relative;
             a{
@@ -77,10 +74,10 @@ body{
                 .btn{
                     max-width: 625px;
                     width: percentage( 625 / $width-number-wrapper );
-                    // background: rgba(0,90,255,.4);
                     height: percentage( 112 / 484 );
-                    border-radius: 28px;
-                    left: 10%;
+                    &:hover{
+                        box-shadow: none;
+                    }
                     &.btn-1{
                         left: 10%;
                     }
@@ -90,13 +87,12 @@ body{
                     }
                     &.btn-3{
                         left: 10%;
-                        top: 61%;
+                        top: 60.4%;
                     }
                 }
             }
         }
     }
-
     @for $i from 1 through 9 {
         .sec-#{ $i } {
             @include sec-size( nth($height-sec-max, $i) );
